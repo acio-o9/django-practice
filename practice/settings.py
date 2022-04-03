@@ -32,6 +32,7 @@ ALLOWED_HOSTS = ['0.0.0.0']
 
 INSTALLED_APPS = [
     'polls.apps.PollsConfig',
+    'dog_logger.apps.DogLoggerConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
