@@ -1,0 +1,28 @@
+<h1>Dog Logger</h1>
+<h2>Home</h2>
+<section>
+    <h3>Owner List</h3>
+    <ul>
+        {% for owner in owners %}
+            <li><a href="{% url 'owner' owner.pk %}">{{ owner.name }}</a></li>
+        {% endfor %}
+    </ul>
+</section>
+<section>
+    <h3>Dog List</h3>
+    <ul>
+        <li>TODO: create Dog page.</li>
+        {% for dog in dogs %}
+            <li>{{ dog.name }}</li>
+        {% endfor %}
+    </ul>
+</section>
+<section>
+    <h3>ActionType List</h3>
+    <ul>
+        <li>TODO: create ActionType page.</li>
+        {% for type in action_types %}
+            <li>{{ type.name }}</li>
+        {% endfor %}
+    </ul>
+</section>
