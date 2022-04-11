@@ -2,6 +2,7 @@ from django.http import HttpResponse
 from django.shortcuts import render
 
 from .models import ActionType, Dog, Owner
+from rest_framework import serializers
 
 # Create your views here.
 
@@ -20,6 +21,13 @@ def owner(request, owner_id):
     owner = Owner.objects.filter(pk=owner_id).first()
     if not owner:
         return HttpResponse('not found.')
-    context = {'id': owner.pk, 'name': owner.name}
+    serializer = OwnerSerializer(owner)
+    context = serializer.data
 
     return render(request, 'dog_logger/owner.html', context)
+
+
+class OwnerSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Owner
+        fields = ['id', 'name']
