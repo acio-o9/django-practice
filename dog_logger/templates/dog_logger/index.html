@@ -26,3 +26,12 @@
         {% endfor %}
     </ul>
 </section>
+<section>
+    <h3>ActionHistory List</h3>
+    <ul>
+        <li>TODO: create ActionHistory page.</li>
+        {% for history in action_histories %}
+        <li>{{ history.action_date }} {{ history.dog.name }}/{{ history.owner.name }}/{{ history.action_type.name }}</li>
+        {% endfor %}
+    </ul>
+</section>

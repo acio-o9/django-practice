@@ -1,7 +1,7 @@
 from django.http import HttpResponse
 from django.shortcuts import render
 
-from .models import ActionType, Dog, Owner
+from .models import ActionHistory, ActionType, Dog, Owner
 from rest_framework import serializers
 
 # Create your views here.
@@ -10,10 +10,12 @@ def index(request):
     owners = Owner.objects.all()
     dogs = Dog.objects.all()
     action_types = ActionType.objects.all()
+    action_histories = ActionHistory.objects.all()
     context = {
             'owners': owners,
             'dogs': dogs,
             'action_types': action_types,
+            'action_histories': action_histories,
             }
     return render(request, 'dog_logger/index.html', context)
 
