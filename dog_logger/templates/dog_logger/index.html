@@ -4,7 +4,7 @@
     <h3>Owner List</h3>
     <ul>
         {% for owner in owners %}
-            <li><a href="{% url 'owner' owner.pk %}">{{ owner.name }}</a></li>
+            <li><a href="{% url 'owner' owner.id %}">{{ owner.name_with_suffix }}</a></li>
         {% endfor %}
     </ul>
 </section>
