@@ -1,4 +1,4 @@
-from .models import Owner
+from .models import Dog, Owner
 
 from rest_framework import serializers
 
@@ -11,4 +11,10 @@ class OwnerSerializer(serializers.ModelSerializer):
 
     def get_name_with_suffix(self, owner):
         return f'{owner.name} san'
+
+
+class DogSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Dog
+        fields = ['id', 'name']
 

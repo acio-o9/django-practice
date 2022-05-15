@@ -11,9 +11,8 @@
 <section>
     <h3>Dog List</h3>
     <ul>
-        <li>TODO: create Dog page.</li>
         {% for dog in dogs %}
-            <li>{{ dog.name }}</li>
+            <li><a href="{% url 'dog' dog.id %}">{{ dog.name }}</a></li>
         {% endfor %}
     </ul>
 </section>
